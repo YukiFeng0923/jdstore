@@ -185,3 +185,82 @@ li { list-style-type:none;}
 
 ::selection { background: #ff5e99; color: #FFFFFF; text-shadow: 0; }
 ::-moz-selection { background: #ff5e99; color: #FFFFFF; }
+
+//分隔部分
+/* ----------------------------
+ * Callouts
+ * ----------------------------
+ */
+
+.callout-light {
+  height: 600px;
+    padding: 30px;
+	color: #000;
+	background-color: #ccc;
+}
+
+.callout-light h1,
+h2,
+h3,
+h4 {
+	font-weight: 300;
+	line-height: 1.4;
+}
+
+.callout-dark {
+  height: 600px;
+	padding: 30px;
+	color: #fff;
+	background-color: #252525;
+}
+
+.callout-dark h1,
+h2,
+h3,
+h4 {
+	font-weight: 300;
+	line-height: 1.4;
+}
+
+.callout-dark p {
+	color: #B1B1B1;
+	font-size: 17px;
+}
+
+.callout-mage {
+  height: 600px;
+	padding: 30px;
+	background-color: #743C58;
+	color: #fff;
+}
+
+.callout-bubble {
+  height: 600px;
+	padding: 30px;
+	color: #fff;
+	background-color: #A94545;
+}
+
+.callout-bubble h1,
+h2,
+h3,
+h4 {
+	font-weight: 300;
+	line-height: 1.4;
+}
+
+.callout-block {
+  height: 600px;
+	background-color: #F5F3F4;
+	border-left: 5px solid #a94545;
+	border-right: 5px solid #a94545;
+	padding: 15px;
+}
+
+.callout-block h1,
+.callout-block h2,
+.callout-block h3,
+.callout-block h4 {
+	font-weight: 300;
+	line-height: 1.4;
+}
