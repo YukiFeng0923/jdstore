@@ -1,4 +1,5 @@
 
+
 	<div class="container">
 		<div class="card">
 			<div class="container-fliud">
@@ -18,15 +19,15 @@
 								<span class="fa fa-star checked"></span>
 								<span class="fa fa-star checked"></span>
 								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star"></span>
+								<span class="fa fa-star checked"></span>
 							</div>
-							<span class="review-no">100 reviews</span>
+							<span class="review-no">100次浏览</span>
 						</div>
 						<p><%=@product.description  %></p>
-						<h4 class="price">current price:￥<%=@product.price  %></h4>
-            <h4 class="price">quantity:<%=@product.quantity %></h4>
+						<h4 class="price">价格:￥<%=@product.price  %></h4>
+            <h4 class="price">数量:<%=@product.quantity %></h4>
 						<div class="pull-right">
-							<%=link_to("Add to my cart", add_to_cart_product_path(@product), :method=> :post, :class =>"btn btn-primary btn-lg btn-danger")  %>
+							<%=link_to("加入购物车", add_to_cart_product_path(@product), :method=> :post, :class =>"btn btn-primary btn-lg btn-danger")  %>
 						</div>
 					</div>
 				</div>

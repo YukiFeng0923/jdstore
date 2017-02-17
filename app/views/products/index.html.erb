@@ -1,42 +1,10 @@
-<h2>Product List</h2>
-<div class="pull-right",style="padding-bottom: 20px;">
-  <%= link_to("新增产品",new_admin_product_path, class:"btn btn-primary btn-sm")  %>
+<div class="products-1">
+  <h3 class="introduction">得到商店</h3>
+  <h4 class="introduction-sub">感谢光临得到商店，欢迎你成为一名终身学习者</h4>
+  <div class="row">
+    <%= render :partial => "product_items", :collection => @products, :as => :product %>
+  </div>
+  <p class=" text-center ending">
+    没有更多商品了
+  </p>
 </div>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th width="220">商品图片</th>
-      <th>商品名称</th>
-      <th>价格</th>
-      <th width="100">编辑</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-    <tr>
-      <td>
-        <%= product.id %>
-      </td>
-      <td>
-        <%=link_to product_path(product) do  %>
-          <% if product.image.present? %>
-            <%=image_tag(product.image.thumb.url, class:"thumbnail") %>
-          <%else  %>
-            <%=image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")  %>
-          <%end  %>
-        <%  end %>
-      </td>
-      <td>
-        <%=product.title  %>
-      </td>
-      <td>
-        <%=product.price  %>
-      </td>
-      <td>
-        <%=link_to("Edit",edit_admin_product_path(product))  %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
