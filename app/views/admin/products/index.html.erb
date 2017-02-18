@@ -1,14 +1,31 @@
 
 
-<div class="pull-right",style="padding-bottom: 20px;">
-  <%= link_to("新增产品",new_admin_product_path, class:"btn btn-primary btn-sm")  %>
+<div class="render-page">
+  <div class="pull-right">
+    <%= link_to("新增商品", new_admin_product_path, class: "btn btn-default") %>
+  </div>
+  <h3 class="text-center">全部商品</h3>
+  <hr>
+  <div class="row">
+    <% @products.each do |product| %>
+    <div class="col-md-6 product-chunk">
+      <div class="col-md-6 chunk-left">
+        <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-6 chunk-right">
+        <p><%= product.title %> ￥<%= product.price %></p>
+        <p><%= product.description %></p>
+        <p><%= product.quantity %></p>
+        <%= link_to("编辑", edit_admin_product_path(product)) %> |
+        <%= link_to("删除", admin_product_path(product), method: :delete, data: { confirm: "Are your sure?" }) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
-<ul>
-  <% @products.each do |product| %>
-  <li>
-    <%=link_to(product.title, admin_product_path(product)) %>
-    <%=link_to("Edit",edit_admin_product_path(product),class: "btn btn-sm btn-default")  %>
-    <%=link_to("Delete",admin_product_path(product),class: "btn btn-sm btn-default", method: :delete, data: { confirm: "Are you sure?" } )%>
-  </li>
-<% end  %>
-</ul>
